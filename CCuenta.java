@@ -9,65 +9,91 @@ package cuentas;
 
 /**
  *
- * @author daldo
+ * @author Eudaldo Alvaro Cal Saul
  */
 public class CCuenta {
 
     /**
-     * @return the nombre
+     * Obtiene el nombre del titular de la cuenta.
+     * 
+     * @return El nombre del titular.
      */
     public String getNombre() {
         return nombre;
     }
 
     /**
-     * @param nombre the nombre to set
+     * Establece el nombre del titular de la cuenta.
+     * 
+     * @param nombre El nombre del titular.
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     /**
-     * @return the cuenta
+     * Obtiene el número de cuenta.
+     * 
+     * @return El número de cuenta.
      */
     public String getCuenta() {
         return cuenta;
     }
 
     /**
-     * @param cuenta the cuenta to set
+     * Establece el número de cuenta.
+     * 
+     * @param cuenta El número de cuenta.
      */
     public void setCuenta(String cuenta) {
         this.cuenta = cuenta;
     }
 
     /**
-     * @return the saldo
+     * Obtiene el saldo de la cuenta.
+     * 
+     * @return El saldo de la cuenta.
      */
     public double getSaldo() {
         return saldo;
     }
 
     /**
-     * @param saldo the saldo to set
+     * Establece el saldo de la cuenta.
+     * 
+     * @param saldo El saldo de la cuenta.
      */
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
-    /**
-     * @return the tipoInterés
+   /**
+     * Obtiene el tipo de interés de la cuenta.
+     * 
+     * @return El tipo de interés de la cuenta.
      */
     public double getTipoInterés() {
         return tipoInterés;
     }
 
     /**
-     * @param tipoInterés the tipoInterés to set
+     * Establece el tipo de interés de la cuenta.
+     * 
+     * @param tipoInterés El tipo de interés de la cuenta.
      */
     public void setTipoInterés(double tipoInterés) {
         this.tipoInterés = tipoInterés;
     }
+    
+    /**
+     * Constructor con parámetros.
+     * 
+     * @param nom Nombre del titular de la cuenta.
+     * @param cue Número de cuenta.
+     * @param sal Saldo inicial de la cuenta.
+     * @param tipo Tipo de interés de la cuenta.
+     */
+    
     private String nombre;
     private String cuenta;
     private double saldo;
@@ -81,11 +107,21 @@ public class CCuenta {
         cuenta=cue;
         saldo=sal;
     }
-
+    
+    /**
+     * Método que devuelve el estado de la cuenta.
+     * 
+     * @return El saldo actual de la cuenta.
+     */
     public double estado(){
         return getSaldo();
     }
 
+    /**
+     * Método para retirar una cantidad de la cuenta.
+     * 
+     * @param cantidad La cantidad a retirar.
+     */
     public void retirar(double cantidad){
         try {
             System.out.println("Retiro en cuenta:" + cantidad);
@@ -99,6 +135,11 @@ public class CCuenta {
         }
     }
 
+    /**
+     * Método para ingresar una cantidad en la cuenta.
+     * 
+     * @param cantidad La cantidad a ingresar.
+     */
     public void ingresar(double cantidad){
         try {
             System.out.println("Ingreso en cuenta:" + cantidad);
@@ -110,6 +151,11 @@ public class CCuenta {
         }
     }
 
+    /**
+     * Método principal para probar las operaciones de la cuenta.
+     * 
+     * @param args Argumentos de la línea de comandos.
+     */
     public static void main(String[] args) {
     CCuenta cuenta1;
     double saldoActual;
@@ -123,9 +169,14 @@ public class CCuenta {
     System.out.println("El saldo actual es "+ saldoActual );
     }
 
+    /**
+     * Método que realiza operaciones de ingreso y retiro en la cuenta.
+     * 
+     * @param cuenta1 La cuenta en la que se realizan las operaciones.
+     */
     private static void operaciones(CCuenta cuenta1) {
         // Operaciones de ingreso y retiro
-        cuenta1.retirar(2300);
-        cuenta1.ingresar(685);
+        cuenta1.retirar(2000);
+        cuenta1.ingresar(1000);
     }
 }
